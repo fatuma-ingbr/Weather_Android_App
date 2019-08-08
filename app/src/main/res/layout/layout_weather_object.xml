@@ -24,13 +24,13 @@
                 android:id="@+id/cityView"
                 android:layout_width="160dp"
                 android:layout_height="45dp"
-                android:text=""
                 android:layout_marginLeft="5dp"
-                android:textSize="30dp"
-                android:gravity="center_vertical"
-                android:fontFamily="@font/josefin_sans_semibold"
                 android:background="@color/colorPrimaryDark"
-                android:textColor="@color/white"/>
+                android:fontFamily="@font/josefin_sans_semibold"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="30dp" />
 
             <TextView
                 android:id="@+id/countryView"
