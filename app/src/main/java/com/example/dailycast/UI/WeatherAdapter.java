@@ -7,7 +7,6 @@ package com.example.dailycast.UI;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -62,7 +61,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
         //getting weather data from the ArrayList values
         final Weather weather = weatherList.get(position);
 
-        holder.countryView.setText(getCountry(weather.getLocation())); //TODO: find a way to change this to the country
+        holder.countryView.setText(getCountry(key));
         holder.maxTempView.setText(weather.getMaxTemp());
         holder.cityView.setText(weather.getLocation());
         holder.rainProbView.setText(weather.getRainProbability());
@@ -72,8 +71,6 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
         //TODO: Basic Syntax: holder.[NameOfView].setImageResource(R.drawable.[NameOfIcon])
 
         holder.parentLayout.setOnClickListener(new View.OnClickListener(){
-
-            Bundle bundle = new Bundle();
 
             @Override
             public void onClick(View v) {
@@ -139,4 +136,6 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
             this.adapter = adapter;
         }
     }
+
+
 }

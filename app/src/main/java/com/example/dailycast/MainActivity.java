@@ -7,36 +7,28 @@ package com.example.dailycast;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
-import com.example.dailycast.DataObject.Weather;
 import com.example.dailycast.RSS.RSSParser;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private HashMap<String, ArrayList<Weather>> locationWeatherStorage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Initializing the RecyclerView
         recyclerView = findViewById(R.id.RecyclerView);
         recyclerView.setHasFixedSize(true); //TODO: check if you really need this
+
+        //Setting the layout manager
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         new RSSParser(MainActivity.this, recyclerView).execute();
 
-    }
-
-    //TODO: Link data to the location layouts.
-    //TODO:
-    //TODO:
-
-    public void callBack(HashMap<String, ArrayList<Weather>> locationWeatherStorage){
-        this.locationWeatherStorage = locationWeatherStorage;
     }
 
 }

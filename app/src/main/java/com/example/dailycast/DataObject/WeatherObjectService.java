@@ -39,6 +39,8 @@ public class WeatherObjectService {
             String rainProbability = tmpColon[1];
             weather.setDay(day);
             weather.setRainProbability(rainProbability);
+            weather.setLocation(location);
+
             weatherStorage.add(weather);
 
         }
@@ -54,8 +56,6 @@ public class WeatherObjectService {
             Weather w = weatherStorage.get(counter);
             tmpComma = item.split(Character.toString(COMMA_DELIMITER));
 
-            w.setLocation(location);
-
             for(int i = 0; i < tmpComma.length; i++){
 
                 tmpColon = tmpComma[i].split(Character.toString(COLON_DELIMITER));
@@ -63,31 +63,24 @@ public class WeatherObjectService {
                 if(i == 0){
                     String maxTemp = tmpColon[1].substring(0,5);
                     w.setMaxTemp(maxTemp);
-                    weatherStorage.add(w);
                 }else if(i == 1){
                     String minTemp = tmpColon[1].substring(0,5);
                     w.setMinTemp(minTemp);
-                    weatherStorage.add(w);
                 }else if(i == 5){
                     String pressure = tmpColon[1];
                     w.setPressure(pressure);
-                    weatherStorage.add(w);
                 }else if(i == 6){
                     String humidity = tmpColon[1];
                     w.setHumidity(humidity);
-                    weatherStorage.add(w);
                 }
+
+                weatherStorage.add(w);
             }
             counter++;
         }
 
         //setting Date object
         weatherStorage.get(0).setDate(date);
-
-        //TODO: increment the dates
-//        weatherStorage.get(1).setDate(createDate(date));
-//        weatherStorage.get(2).setDate(createDate(createDate(date)));
-
 
         return weatherStorage;
 

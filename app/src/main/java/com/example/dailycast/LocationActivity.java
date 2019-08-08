@@ -7,20 +7,23 @@ package com.example.dailycast;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.dailycast.Fragments.FragmentAfterTomorrow;
-import com.example.dailycast.Fragments.FragmentToday;
+import com.example.dailycast.Fragments.FragmentDay1;
+import com.example.dailycast.Fragments.FragmentDay2;
+import com.example.dailycast.Fragments.FragmentDay3;
 import com.example.dailycast.UI.ViewPagerAdapter;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 
 public class LocationActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
-    private AppBarLayout appBarLayout; //TODO: check if you really need this
     private ViewPager viewPager;
 
     @Override
@@ -34,9 +37,9 @@ public class LocationActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         //adding Fragments
-        adapter.addFragment(new FragmentToday(), "Today"); //TODO: change this to dynamic data
-        adapter.addFragment(new FragmentAfterTomorrow(), "Tomorrow");
-        adapter.addFragment(new FragmentAfterTomorrow(), "After Tomorrow");
+        adapter.addFragment(new FragmentDay1(), "Today"); //TODO: change this to dynamic data
+        adapter.addFragment(new FragmentDay2(), "Tomorrow");
+        adapter.addFragment(new FragmentDay3(), "After Tomorrow");
 
         //Setting up the adapter
         viewPager.setAdapter(adapter);
@@ -57,6 +60,20 @@ public class LocationActivity extends AppCompatActivity {
 //            setWeatherData(singleLocationWeather);
         }
 
+    }
+
+    public String createDate(String stringDate) throws ParseException {
+        //TODO: revise this method to properly increment the dates.
+        String date;
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("E, dd MMM yyyy");
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(dateFormat.parse(stringDate));
+        cal.add(Calendar.DATE,1);
+
+        date = dateFormat.format(cal.getTime());
+
+        return date;
     }
 
 //    private void setWeatherData(ArrayList<Weather> locationWeatherData){
