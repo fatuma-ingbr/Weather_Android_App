@@ -9,7 +9,7 @@
     </style>
 
     <style name="mActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-        <item name="background">@color/colorPrimaryDark</item>
+        <item name="background">@color/colorPrimary</item>
     </style>
 
 </resources>

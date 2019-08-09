@@ -9,16 +9,32 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
         card_view:cardUseCompatPadding="false"
         card_view:cardElevation="5dp"
-        card_view:cardCornerRadius="15dp">
+        card_view:cardCornerRadius="0dp"
+        android:background="#000">
+
+        <!--android:layout_margin="5dp"-->
+        <!---->
+        
+        <FrameLayout
+            android:background="#000"
+            android:layout_width="4dp"
+            android:layout_height="match_parent"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:background="@color/colorPrimaryDark">
+
+            <ImageView
+                android:id="@+id/weather_icon"
+                android:layout_width="105dp"
+                android:layout_height="110dp"
+                android:padding="4dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="5dp" />
 
             <TextView
                 android:id="@+id/cityView"
@@ -30,12 +46,13 @@
                 android:gravity="center_vertical"
                 android:text=""
                 android:textColor="@color/white"
-                android:textSize="30dp" />
+                android:textSize="30dp"
+                android:layout_toRightOf="@+id/weather_icon"/>
 
             <TextView
                 android:id="@+id/countryView"
                 android:layout_width="160dp"
-                android:layout_height="15dp"
+                android:layout_height="20dp"
                 android:text=""
                 android:layout_marginLeft="5dp"
                 android:textSize="16dp"
@@ -43,41 +60,36 @@
                 android:gravity="center_vertical"
                 android:fontFamily="@font/josefin_sans"
                 android:background="@color/colorPrimaryDark"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:layout_toRightOf="@+id/weather_icon"/>
 
             <TextView
                 android:id= "@+id/rainProbView"
                 android:layout_width="160dp"
-                android:layout_height="45dp"
+                android:layout_height="50dp"
                 android:layout_below="@id/countryView"
                 android:background="@color/colorPrimaryDark"
                 android:fontFamily="@font/josefin_sans"
                 android:gravity="center_vertical"
                 android:text=""
                 android:textSize="20dp"
-                android:textColor="@color/white" />
-
-            <ImageView
-                android:id="@+id/weather_icon"
-                android:layout_width="105dp"
-                android:layout_height="110dp"
-                android:padding="4dp"
-                android:src="@drawable/ic_sunny"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/cityView"/>
+                android:textColor="@color/white"
+                android:layout_toRightOf="@+id/weather_icon"/>
 
             <TextView
                 android:id="@+id/maxTemp"
                 android:layout_width="105dp"
                 android:layout_height="110dp"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/weather_icon"
+
+                android:layout_toRightOf="@id/cityView"
                 android:background="@color/colorPrimaryDark"
                 android:fontFamily="@font/josefin_sans"
                 android:gravity="center"
                 android:text=""
                 android:textColor="@color/white"
                 android:textSize="40dp" />
+
+            <!--android:layout_marginLeft="10dp"-->
 
         </RelativeLayout>
 

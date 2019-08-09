@@ -23,6 +23,8 @@
                 android:layout_gravity="center"
                 android:id="@+id/tab_locationView2"
                 android:text="Testing"
+                android:textSize="20dp"
+                android:textColor="@color/white"
                 android:layout_marginTop="20dp"
                 android:background="#735284"/>
 
@@ -31,6 +33,8 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textColor="@color/white"
                 android:id="@+id/tab_date2"
                 android:layout_below="@+id/tab_locationView2"
                 android:background="#974631"/>
@@ -54,6 +58,8 @@
                     android:layout_width="175dp"
                     android:layout_height="100dp"
                     android:id="@+id/tab_maxTemp2"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
                     android:layout_toRightOf="@+id/tab_weatherIcon2"
                     android:background="#214678"/>
 
@@ -61,6 +67,8 @@
                     android:layout_width="175dp"
                     android:layout_height="100dp"
                     android:id="@+id/tab_rainProb2"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
                     android:layout_toRightOf="@+id/tab_weatherIcon2"
                     android:layout_below="@+id/tab_maxTemp2"
                     android:background="#023456"/>

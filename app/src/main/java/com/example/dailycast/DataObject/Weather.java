@@ -110,11 +110,13 @@ public class Weather implements Parcelable {
 
         this.city = city;
         country = getCountry(city);
-        day =splitTitle[0].split(":")[0];
+        day = splitTitle[0].split(":")[0];
         rainProbability =splitTitle[0].split(":")[1];
 
         if(splitDesc.length == 9){
-            minTemp = splitDesc[0].split(":")[1];
+            maxTemp = splitDesc[0].split(":")[1].substring(0,5);
+            minTemp = "-";
+            sunrise = "-";
             windDirection = splitDesc[1].split(":")[1];
             windSpeed = splitDesc[2].split(":")[1];
             visibility = splitDesc[3].split(":")[1];
@@ -125,8 +127,8 @@ public class Weather implements Parcelable {
             sunset = splitDesc[8].split(":")[1];
 
         }else if(splitDesc.length == 11){
-            maxTemp = splitDesc[0].split(":")[1];
-            minTemp = splitDesc[1].split(":")[1];
+            maxTemp = splitDesc[0].split(":")[1].substring(0,5);
+            minTemp = splitDesc[1].split(":")[1].substring(0,5);
             windDirection = splitDesc[2].split(":")[1];
             windSpeed = splitDesc[3].split(":")[1];
             visibility = splitDesc[4].split(":")[1];
