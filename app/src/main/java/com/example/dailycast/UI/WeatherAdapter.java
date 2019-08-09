@@ -6,7 +6,6 @@ package com.example.dailycast.UI;
  * */
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,23 +16,24 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dailycast.DataObject.Weather;
-import com.example.dailycast.LocationActivity;
 import com.example.dailycast.R;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 
 public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>{
 
-    private final LinkedHashMap<String,ArrayList<Weather>> weatherStorage;
+    private final HashMap<String,ArrayList<Weather>> weatherStorage;
+    //private final ArrayList<Weather> weatherStorage;
     private LayoutInflater inflater;
     private Context c;
 
 
-    public WeatherAdapter(Context c, LinkedHashMap<String,ArrayList<Weather>> weatherStorage) {
+    public WeatherAdapter(Context c, HashMap<String,ArrayList<Weather>> hashMap) {
+    //public WeatherAdapter(Context c, ArrayList<Weather> weatherStorage) {
         this.c = c;
         inflater = LayoutInflater.from(c);
-        this.weatherStorage = weatherStorage;
+        this.weatherStorage = hashMap;
     }
 
     @NonNull
@@ -47,23 +47,13 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
 
     @Override
     public void onBindViewHolder(@NonNull WeatherAdapter.WeatherViewHolder holder, final int position) {
+        
+        ArrayList<Weather> arrayList = weatherStorage.get(position);
+        final Weather weather = arrayList.get(0);
 
-
-        //Creating a List of the keys
-        //Location is the key in our LinkedHashMap
-        final ArrayList<String> locations = new ArrayList<>(weatherStorage.keySet());
-
-        //Looping through the keys to get the values
-        //Assigning the values to an ArrayList
-        String key = locations.get(position);
-        final ArrayList<Weather> weatherList = weatherStorage.get(key);
-
-        //getting weather data from the ArrayList values
-        final Weather weather = weatherList.get(position);
-
-        holder.countryView.setText(getCountry(key));
+        holder.countryView.setText(weather.getCountry());
         holder.maxTempView.setText(weather.getMaxTemp());
-        holder.cityView.setText(weather.getLocation());
+        holder.cityView.setText(weather.getCity());
         holder.rainProbView.setText(weather.getRainProbability());
 
         //TODO: Add an switch or if statement checking the rain probability and assigning it to the right icon.
@@ -74,17 +64,20 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(c,weather.getLocation(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(c,weather.getCity(),Toast.LENGTH_SHORT).show();
 
+                //TODO: if/else
 
-                for(int i = 0; i < weatherList.size(); i++){
-
-                    //TODO: Figure out how to get data.
-                    //sending the key which is the of our data
-                    Intent intent = new Intent(c, LocationActivity.class);
-                    intent.putExtra("location",weather.getLocation());
-                    c.startActivity(intent);
-                }
+//
+//                    //TODO: Figure out how to get data.
+//                    //sending the key which is the of our data
+//                    Intent intent = new Intent(c, LocationActivity.class);
+//                    intent.putExtra("city",weather.getCity());
+//                    intent.putExtra("WeatherObject1", weatherList.get(0));
+//                    intent.putExtra("WeatherObject2", weatherList.get(1));
+//                    intent.putExtra("WeatherObject3", weatherList.get(2));
+//
+//                    c.startActivity(intent);
 
             }
         });
@@ -93,28 +86,6 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
     @Override
     public int getItemCount() {
         return weatherStorage.size();
-    }
-
-    private String getCountry(String city){
-
-        switch(city){
-            case "Dhaka":
-                return "Bangladesh";
-            case "Kigali":
-                return "Rwanda";
-            case "Oman":
-                return  "Muscat";
-            case "Glasgow":
-                return "Scotland";
-            case "London":
-                return "United Kingdom";
-            case "New York":
-                return "USA";
-            case "Port Louis":
-                return "Mauritius";
-        }
-
-        return null;
     }
 
     class WeatherViewHolder extends RecyclerView.ViewHolder{
