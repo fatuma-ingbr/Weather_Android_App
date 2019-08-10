@@ -58,7 +58,7 @@ public class LocationActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         //adding Fragments
-        adapter.addFragment(fragmentDay1, weatherObj1.getDay()); //TODO: change this to dynamic data
+        adapter.addFragment(fragmentDay1, weatherObj1.getDay());
         adapter.addFragment(fragmentDay2, weatherObj2.getDay());
         adapter.addFragment(fragmentDay3, weatherObj3.getDay());
 

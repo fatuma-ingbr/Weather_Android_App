@@ -1,4 +1,8 @@
 package com.example.dailycast.DataObject;
+/**
+ *  Name: Fatuma Ingabire
+ *  Student ID: S1719023
+ * */
 
 import com.example.dailycast.R;
 

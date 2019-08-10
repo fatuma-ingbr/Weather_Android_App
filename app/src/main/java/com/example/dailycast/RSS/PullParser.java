@@ -1,4 +1,8 @@
 package com.example.dailycast.RSS;
+/**
+ *  Name: Fatuma Ingabire
+ *  Student ID: S1719023
+ * */
 
 import android.content.Context;
 import android.os.AsyncTask;

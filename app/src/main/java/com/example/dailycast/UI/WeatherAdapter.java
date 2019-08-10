@@ -1,5 +1,4 @@
 package com.example.dailycast.UI;
-
 /**
  *  Name: Fatuma Ingabire
  *  Student ID: S1719023
@@ -71,18 +70,12 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
         holder.rainProbView.setText(weather.getRainProbability());
         holder.iconView.setImageResource(WeatherCondition.getWeatherCondition(weather.getRainProbability(), weather.getDay()));
 
-        //TODO: Add an switch or if statement checking the rain probability and assigning it to the right icon.
-        //TODO: You will need to add icons to the drawable folder
-        //TODO: Basic Syntax: holder.[NameOfView].setImageResource(R.drawable.[NameOfIcon])
 
         holder.parentLayout.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
                 Toast.makeText(c,weather.getCity(),Toast.LENGTH_SHORT).show();
-
-                    //TODO: if/else
-                    //TODO: Figure out how to get data.
 
                     //sending the key which is the of our data
                     Intent intent = new Intent(c, LocationActivity.class);

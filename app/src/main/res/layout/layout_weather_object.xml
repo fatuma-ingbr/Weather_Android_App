@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--Name: Fatuma Ingabire-->
+<!--Student ID: S1719023-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,16 +15,7 @@
         android:layout_height="wrap_content"
         card_view:cardUseCompatPadding="false"
         card_view:cardElevation="5dp"
-        card_view:cardCornerRadius="0dp"
-        android:background="#000">
-
-        <!--android:layout_margin="5dp"-->
-        <!---->
-        
-        <FrameLayout
-            android:background="#000"
-            android:layout_width="4dp"
-            android:layout_height="match_parent"/>
+        card_view:cardCornerRadius="0dp">
 
         <RelativeLayout
             android:layout_width="match_parent"

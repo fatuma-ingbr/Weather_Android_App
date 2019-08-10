@@ -1,12 +1,11 @@
 package com.example.dailycast.DataObject;
-
-import android.os.Parcel;
-import android.os.Parcelable;
-
 /**
  *  Name: Fatuma Ingabire
  *  Student ID: S1719023
  * */
+
+import android.os.Parcel;
+import android.os.Parcelable;
 
 public class Weather implements Parcelable {
 

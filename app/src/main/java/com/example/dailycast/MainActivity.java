@@ -27,4 +27,15 @@ public class MainActivity extends AppCompatActivity {
         new PullParser(MainActivity.this,recyclerView).execute();
     }
 
+    //TODO: Finish up styling the fragments views
+    //TODO: implement an appBarLayout move the city data there. Part of part 1
+    //TODO: Revise the date so that the date change as you switch tabs
+    //TODO: implement the horizontal orientation
+    //TODO: Implement user navigation through the views
+    //TODO: Implement an update intervals - defaults 8am & 8pm (20:00hrs)
+    //TODO: Restructure the folders to MVC
+    //TODO: Write test report
+    //TODO: Record with screen-o-matic
+
+
 }
