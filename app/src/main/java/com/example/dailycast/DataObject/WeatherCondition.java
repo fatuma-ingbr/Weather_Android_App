@@ -29,6 +29,8 @@ public class WeatherCondition {
                     return R.drawable.cloudy;
                 case " Light Rain":
                     return R.drawable.rain;
+                case " Light Rain Showers":
+                    return R.drawable.rain;
                 case " Light Snow":
                     return R.drawable.snow;
                 case " Partly Cloudy":
@@ -53,6 +55,8 @@ public class WeatherCondition {
                 case " Light Cloud":
                     return R.drawable.cloudy;
                 case " Light Rain":
+                    return R.drawable.rain;
+                case " Light Rain Showers":
                     return R.drawable.rain;
                 case " Light Snow":
                     return R.drawable.snow;

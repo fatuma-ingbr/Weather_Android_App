@@ -8,6 +8,9 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Weather implements Parcelable {
+    private String date;
+    private String title;
+    private String desc;
 
     private String city;
     private String country;
@@ -17,9 +20,7 @@ public class Weather implements Parcelable {
     private String minTemp;
     private String pressure;
     private String humidity;
-    private String date;
-    private String title;
-    private String desc;
+
     private String windDirection;
     private String windSpeed;
     private String visibility;

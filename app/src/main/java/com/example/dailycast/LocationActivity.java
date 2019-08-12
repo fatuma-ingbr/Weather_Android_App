@@ -8,9 +8,14 @@ package com.example.dailycast;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.example.dailycast.DataObject.Weather;
 import com.example.dailycast.Fragments.FragmentDay1;
@@ -23,6 +28,7 @@ public class LocationActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private TextView textView;
 
     FragmentDay1 fragmentDay1 = new FragmentDay1();
     FragmentDay2 fragmentDay2 = new FragmentDay2();
@@ -35,6 +41,7 @@ public class LocationActivity extends AppCompatActivity {
 
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
+        textView = findViewById(R.id.tab_locationView);
 
 
         Intent intent = getIntent();
@@ -42,6 +49,10 @@ public class LocationActivity extends AppCompatActivity {
         Weather weatherObj1 = intent.getExtras().getParcelable("WeatherObject1");
         Weather weatherObj2 = intent.getExtras().getParcelable("WeatherObject2");
         Weather weatherObj3 = intent.getExtras().getParcelable("WeatherObject3");
+
+        String city = intent.getStringExtra("city");
+
+        textView.setText(city);
 
         Bundle bundle = new Bundle();
         Bundle bundle2 = new Bundle();
@@ -67,6 +78,33 @@ public class LocationActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.refresh) {
+
+            Intent intent = new Intent(this, TimeActivity.class);
+            this.startActivity(intent);
+
+            return true;
+
+        }else if (item.getItemId() == R.id.list_all) {
+
+            Intent intent = new Intent(this, MainActivity.class);
+            this.startActivity(intent);
+
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

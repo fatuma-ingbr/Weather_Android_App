@@ -13,8 +13,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity = "center_horizontal"
-        android:layout_marginLeft="30dp">
+        android:gravity = "center_horizontal">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -22,25 +21,14 @@
             android:layout_gravity="center_horizontal">
 
             <TextView
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:id="@+id/tab_locationView1"
-                android:text="Testing"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:layout_marginTop="20dp"
-                android:background="#735284"/>
-
-            <TextView
-                android:layout_width="350dp"
+                android:layout_width="450dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
                 android:id="@+id/tab_date1"
                 android:textSize="20dp"
                 android:textColor="@color/white"
-                android:layout_below="@+id/tab_locationView1"
                 android:background="#974631"/>
 
             <RelativeLayout
@@ -81,11 +69,10 @@
 
             <RelativeLayout
                 android:id="@+id/rv_2"
-                android:layout_width="350dp"
+                android:layout_width="fill_parent"
                 android:layout_height="300dp"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center"
-                android:background="#670049"
                 android:paddingBottom="20dp"
                 android:layout_below="@+id/rv_1"
                 android:paddingTop="20dp">
@@ -93,41 +80,47 @@
                 <TableLayout
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:paddingLeft="20dp">
+                    android:background="@drawable/background">
 
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="50dp"
-                        android:layout_marginBottom="10dp">
+                        android:layout_marginBottom="1dp">
 
                         <TextView
                             android:layout_column="1"
-                            android:layout_width="145dp"
+                            android:layout_width="189.5dp"
                             android:layout_height="55dp"
                             android:gravity="center_vertical"
                             android:id="@+id/tab_maxTempTitle1"
                             android:text="Max. Temp"
                             android:textSize="25dp"
+                            android:background="@color/colorPrimaryDark"
+                            android:layout_marginRight="1dp"
+                            android:paddingLeft="20dp"
                             android:textColor="@color/white"
                             android:fontFamily="@font/josefin_sans"/>
 
                         <TextView
-                            android:layout_column="1"
-                            android:layout_width="140dp"
-                            android:layout_height="55dp"
-                            android:gravity="center_vertical"
                             android:id="@+id/tab_maxTempValue1"
+                            android:layout_width="189.5dp"
+                            android:layout_height="55dp"
+                            android:layout_column="1"
+                            android:background="@color/colorPrimaryDark"
+                            android:fontFamily="@font/josefin_sans"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
                             android:text="35"
                             android:textAlignment="center"
-                            android:textSize="25dp"
                             android:textColor="@color/white"
-                            android:fontFamily="@font/josefin_sans"/>
+                            android:textSize="25dp" />
                     </TableRow>
 
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="50dp"
-                        android:layout_marginBottom="10dp">
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/colorPrimaryDark">
 
                         <TextView
                             android:layout_column="1"

@@ -8,12 +8,17 @@ package com.example.dailycast.Fragments;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dailycast.DataObject.Weather;
 import com.example.dailycast.DataObject.WeatherCondition;
@@ -26,7 +31,7 @@ import java.util.Calendar;
 public class FragmentDay1 extends Fragment {
 
     View view;
-    TextView tabPressure, tabLocation, tabDate, maxTemp, maxTempValue,rainProb,minTemp, humidity;
+    TextView tabPressure, tabDate, maxTemp, maxTempValue,rainProb,minTemp, humidity;
     ImageView weatherIcon;
 
 
@@ -38,7 +43,7 @@ public class FragmentDay1 extends Fragment {
         view = inflater.inflate(R.layout.fragment_day1,parent,false);
 
         tabPressure = view.findViewById(R.id.tab_pressureValue1);
-        tabLocation = view.findViewById(R.id.tab_locationView1);
+
         tabDate = view.findViewById(R.id.tab_date1);
         maxTemp = view.findViewById(R.id.tab_maxTemp1);
         maxTempValue = view.findViewById(R.id.tab_maxTempValue1);
@@ -46,13 +51,13 @@ public class FragmentDay1 extends Fragment {
         minTemp = view.findViewById(R.id.tab_minTempValue1);
         humidity = view.findViewById(R.id.tab_humidityValue1);
 
+
         weatherIcon = view.findViewById(R.id.tab_weatherIcon1);
 
         //getting argument bundle
         Weather weather = getArguments().getParcelable("day1");
 
         tabDate.setText(weather.getDate());
-        tabLocation.setText(weather.getCity());
         tabPressure.setText(weather.getPressure());
         maxTemp.setText(weather.getMaxTemp());
         maxTempValue.setText(weather.getMaxTemp());
@@ -66,17 +71,4 @@ public class FragmentDay1 extends Fragment {
         return view;
     }
 
-    public String createDate(String stringDate) throws ParseException {
-        //TODO: revise this method to properly increment the dates.
-        String date;
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat("E, dd MMM yyyy");
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(dateFormat.parse(stringDate));
-        cal.add(Calendar.DATE,1);
-
-        date = dateFormat.format(cal.getTime());
-
-        return date;
-    }
 }

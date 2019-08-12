@@ -1,5 +1,4 @@
 package com.example.dailycast.Fragments;
-
 /**
  *  Name: Fatuma Ingabire
  *  Student ID: S1719023
@@ -27,7 +26,7 @@ import java.util.Calendar;
 public class FragmentDay3 extends Fragment {
 
     View view;
-    TextView tabPressure, tabLocation, tabDate, maxTemp, maxTempValue,rainProb,minTemp, humidity;
+    TextView tabPressure, tabDate, maxTemp, maxTempValue,rainProb,minTemp, humidity;
     ImageView weatherIcon;
 
     public FragmentDay3() {
@@ -39,7 +38,6 @@ public class FragmentDay3 extends Fragment {
         view = inflater.inflate(R.layout.fragment_day3,parent,false);
 
         tabPressure = view.findViewById(R.id.tab_pressureValue3);
-        tabLocation = view.findViewById(R.id.tab_locationView3);
         tabDate = view.findViewById(R.id.tab_date3);
         maxTemp = view.findViewById(R.id.tab_maxTemp3);
         maxTempValue = view.findViewById(R.id.tab_maxTempValue3);
@@ -52,8 +50,15 @@ public class FragmentDay3 extends Fragment {
         //getting argument bundle
         Weather weather = getArguments().getParcelable("day3");
 
-        tabDate.setText(weather.getDate());
-        tabLocation.setText(weather.getCity());
+        try {
+
+            String updatedDate = createDate(weather.getDate());
+            tabDate.setText(updatedDate);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         tabPressure.setText(weather.getPressure());
         maxTemp.setText(weather.getMaxTemp());
         maxTempValue.setText(weather.getMaxTemp());

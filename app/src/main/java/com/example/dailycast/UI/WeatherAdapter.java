@@ -75,16 +75,16 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(c,weather.getCity(),Toast.LENGTH_SHORT).show();
+            Toast.makeText(c,weather.getCity(),Toast.LENGTH_SHORT).show();
 
-                    //sending the key which is the of our data
-                    Intent intent = new Intent(c, LocationActivity.class);
-                    intent.putExtra("city",weather.getCity());
-                    intent.putExtra("WeatherObject1", weatherList.get(0));
-                    intent.putExtra("WeatherObject2", weatherList.get(1));
-                    intent.putExtra("WeatherObject3", weatherList.get(2));
+            //sending the key which is our data
+            Intent intent = new Intent(c, LocationActivity.class);
+            intent.putExtra("city",weather.getCity());
+            intent.putExtra("WeatherObject1", weatherList.get(0));
+            intent.putExtra("WeatherObject2", weatherList.get(1));
+            intent.putExtra("WeatherObject3", weatherList.get(2));
 
-                    c.startActivity(intent);
+            c.startActivity(intent);
 
             }
         });

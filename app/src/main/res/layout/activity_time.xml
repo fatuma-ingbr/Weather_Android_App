@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Name: Fatuma Ingabire-->
+<!--Student ID: S1719023-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TimeActivity">
+
+    <RelativeLayout
+        android:id="@+id/rv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/time_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select morning load time"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/josefin_sans_semibold"
+            android:textSize="20dp"/>
+
+        <TimePicker
+            android:id="@+id/timePicker1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:timePickerMode="spinner"
+            android:layout_below="@+id/time_tv1"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/rv1">
+
+        <TextView
+            android:id="@+id/time_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select evening load time"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/josefin_sans_semibold"
+            android:textSize="20dp"/>
+
+        <TimePicker
+            android:id="@+id/timePicker2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:timePickerMode="spinner"
+            android:layout_below="@+id/time_tv2"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:onClick="saveTime"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimaryDark"
+        android:layout_below="@+id/rv2"/>
+
+</RelativeLayout>

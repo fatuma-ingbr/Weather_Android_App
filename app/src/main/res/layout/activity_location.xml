@@ -12,11 +12,30 @@
     android:orientation="vertical"
     tools:context=".LocationActivity">
 
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:id="@+id/tab_locationView"
+            android:textAlignment="center"
+            android:paddingTop="10dp"
+            android:text="Testing"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:background="#735284"/>
+
+    </android.support.design.widget.AppBarLayout>
+
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#262626"
+        android:background="@color/black"
         app:tabMode="fixed"
         app:tabTextColor="@color/white"
         app:tabGravity="fill"

@@ -23,24 +23,13 @@
 
             <TextView
                 android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:id="@+id/tab_locationView3"
-                android:text="Testing"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:layout_marginTop="20dp"
-                android:background="#735284"/>
-
-            <TextView
-                android:layout_width="350dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:textSize="20dp"
+                android:gravity="center_horizontal"
                 android:textColor="@color/white"
                 android:id="@+id/tab_date3"
-                android:layout_below="@+id/tab_locationView3"
                 android:background="#974631"/>
 
             <RelativeLayout
