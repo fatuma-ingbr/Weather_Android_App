@@ -1,4 +1,4 @@
-package com.example.dailycast.Fragments;
+package com.example.dailycast.Views;
 /**
  *  Name: Fatuma Ingabire
  *  Student ID: S1719023
@@ -14,8 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.dailycast.DataObject.Weather;
-import com.example.dailycast.DataObject.WeatherCondition;
+import com.example.dailycast.Model.Weather;
 import com.example.dailycast.R;
 
 import java.text.ParseException;
@@ -26,8 +25,11 @@ import java.util.Calendar;
 public class FragmentDay3 extends Fragment {
 
     View view;
-    TextView tabPressure, tabDate, maxTemp, maxTempValue,rainProb,minTemp, humidity;
-    ImageView weatherIcon;
+    TextView tabPressure, tabDate, maxTemp,rainProb,minTemp, humidity,
+            sunset, sunrise, windDirection, windSpeed,visibility;
+
+    ImageView weatherIcon, pressureIcon,minTempIcon, humidityIcon,
+            sunsetIcon, sunriseIcon, windIcon, visibilityIcon;
 
     public FragmentDay3() {
     }
@@ -40,10 +42,24 @@ public class FragmentDay3 extends Fragment {
         tabPressure = view.findViewById(R.id.tab_pressureValue3);
         tabDate = view.findViewById(R.id.tab_date3);
         maxTemp = view.findViewById(R.id.tab_maxTemp3);
-        maxTempValue = view.findViewById(R.id.tab_maxTempValue3);
         rainProb = view.findViewById(R.id.tab_rainProb3);
         minTemp = view.findViewById(R.id.tab_minTempValue3);
         humidity = view.findViewById(R.id.tab_humidityValue3);
+
+        sunset = view.findViewById(R.id.tab_sunsetValue3);
+        sunrise = view.findViewById(R.id.tab_sunriseValue3);
+        windDirection = view.findViewById(R.id.tab_windDir3);
+        windSpeed = view.findViewById(R.id.tab_windValue3);
+        visibility = view.findViewById(R.id.tab_visibilityValue3);
+
+
+        pressureIcon = view.findViewById(R.id.tab_pressureIcon3);
+        minTempIcon = view.findViewById(R.id.tab_minTempIcon3);
+        humidityIcon = view.findViewById(R.id.tab_humidityIcon3);
+        sunsetIcon = view.findViewById(R.id.tab_sunsetIcon3);
+        sunriseIcon = view.findViewById(R.id.tab_sunriseIcon3);
+        windIcon = view.findViewById(R.id.tab_windIcon3);
+        visibilityIcon = view.findViewById(R.id.tab_visibilityIcon3);
 
         weatherIcon = view.findViewById(R.id.tab_weatherIcon3);
 
@@ -59,9 +75,22 @@ public class FragmentDay3 extends Fragment {
             e.printStackTrace();
         }
 
+        sunset.setText(weather.getSunset());
+        sunrise.setText(weather.getSunrise());
+        windDirection.setText(weather.getWindDirection());
+        windSpeed.setText(weather.getWindSpeed());
+        visibility.setText(weather.getVisibility());
+
+        pressureIcon.setImageResource(R.drawable.pressure);
+        minTempIcon.setImageResource(R.drawable.mintemp);
+        humidityIcon.setImageResource(R.drawable.humidity);
+        sunsetIcon.setImageResource(R.drawable.sunset);
+        sunriseIcon.setImageResource(R.drawable.sunrise);
+        windIcon.setImageResource(R.drawable.wind);
+        visibilityIcon.setImageResource(R.drawable.visibility);
+
         tabPressure.setText(weather.getPressure());
         maxTemp.setText(weather.getMaxTemp());
-        maxTempValue.setText(weather.getMaxTemp());
         rainProb.setText(weather.getRainProbability());
         minTemp.setText(weather.getMinTemp());
         humidity.setText(weather.getHumidity());

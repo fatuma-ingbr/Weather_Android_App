@@ -1,4 +1,4 @@
-package com.example.dailycast;
+package com.example.dailycast.Views;
 /**
  *  Name: Fatuma Ingabire
  *  Student ID: S1719023
@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.dailycast.R;
 import java.util.Calendar;
 
 public class TimeActivity extends AppCompatActivity {
@@ -71,8 +72,6 @@ public class TimeActivity extends AppCompatActivity {
 
         int eveHr = timePicker2.getHour();
         int eveMin = timePicker2.getMinute();
-
-        //TODO: find a way to use these times to set load times.
 
     }
 

@@ -1,4 +1,4 @@
-package com.example.dailycast;
+package com.example.dailycast.Views;
 
 /**
  *  Name: Fatuma Ingabire
@@ -14,7 +14,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.dailycast.RSS.PullParser;
+import com.example.dailycast.R;
+import com.example.dailycast.Controller.PullParser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -62,16 +63,15 @@ public class MainActivity extends AppCompatActivity {
     //TODO: Implement a menu with view all locations and set update time
     //TODO: Revise the date so that the date change as you switch tabs
     //TODO: Implement an update intervals - defaults 8am & 8pm (20:00hrs)
+    //TODO: Implement user navigation through the views
+    //TODO: Finish up styling the fragments views
+    //TODO: Restructure the folders to MVC
 
     //ALMOST DONE
 
 
     //YET TO-DONE
-
-    //TODO: Finish up styling the fragments views
     //TODO: implement the horizontal orientation
-    //TODO: Implement user navigation through the views
-    //TODO: Restructure the folders to MVC
     //TODO: Write test report
     //TODO: Record with screen-o-matic
 

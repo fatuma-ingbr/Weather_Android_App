@@ -1,4 +1,4 @@
-package com.example.dailycast.DataObject;
+package com.example.dailycast.Views;
 /**
  *  Name: Fatuma Ingabire
  *  Student ID: S1719023

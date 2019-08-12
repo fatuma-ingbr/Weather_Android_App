@@ -1,4 +1,4 @@
-package com.example.dailycast.RSS;
+package com.example.dailycast.Controller;
 /**
  *  Name: Fatuma Ingabire
  *  Student ID: S1719023
@@ -10,8 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.example.dailycast.DataObject.Weather;
-import com.example.dailycast.UI.WeatherAdapter;
+import com.example.dailycast.Model.Weather;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;

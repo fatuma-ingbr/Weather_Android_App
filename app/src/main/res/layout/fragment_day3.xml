@@ -7,213 +7,404 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/gradient_background">
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity = "center_horizontal"
-        android:layout_marginLeft="30dp">
-
+        android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal">
+            android:layout_height="wrap_content">
+            <TableLayout
+                android:id="@+id/table"
+                android:layout_width="412dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_yellow">
+
+                <TableRow
+                    android:id="@+id/row_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout>
+                        <TextView
+                            android:id="@+id/tab_date3"
+                            android:layout_width="412dp"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:paddingTop="5dp"
+                            android:fontFamily="@font/josefin_sans"
+                            android:textColor="@color/white"
+                            android:background="@color/black"
+                            android:text="Date"/>
+
+                        <ImageView
+                            android:id="@+id/tab_weatherIcon3"
+                            android:layout_width="200dp"
+                            android:layout_height="230dp"
+                            android:paddingLeft="10dp"
+                            android:src="@drawable/drizzle"
+                            android:layout_below="@+id/tab_date3"
+                            android:background="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/tab_maxTemp3"
+                            android:layout_width="200dp"
+                            android:layout_height="130dp"
+                            android:layout_below="@+id/tab_date3"
+                            android:text="40 8C"
+                            android:fontFamily="@font/josefin_sans"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="60dp"
+                            android:layout_toRightOf="@+id/tab_weatherIcon3"
+                            android:background="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/tab_rainProb3"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_below="@+id/tab_maxTemp3"
+                            android:text="Thundery showers night crazy"
+                            android:fontFamily="@font/josefin_sans"
+                            android:textColor="@color/white"
+                            android:paddingLeft="5dp"
+                            android:gravity="center_horizontal"
+                            android:textSize="20dp"
+                            android:layout_toRightOf="@+id/tab_weatherIcon3"
+                            android:background="@color/black"/>
+                    </RelativeLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0.5dp">
+
+                    <RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/line_1"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:background="@color/black"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp">
+
+                                <TextView
+                                    android:id="@+id/tab_minTempTitle3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="40dp"
+                                    android:background="@color/black"
+                                    android:gravity="center"
+                                    android:text="Min. Temp"
+                                    android:layout_marginRight="0.5dp"
+                                    android:textColor="@color/white" />
+
+                                <ImageView
+                                    android:id="@+id/tab_minTempIcon3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="70dp"
+                                    android:src="@drawable/cloudy"
+                                    android:layout_marginRight="0.5dp"
+                                    android:layout_below="@+id/tab_minTempTitle3"/>
+
+                                <TextView
+                                    android:id="@+id/tab_minTempValue3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="40dp"
+                                    android:layout_below="@+id/tab_minTempIcon3"
+                                    android:layout_marginRight="0.5dp"
+                                    android:background="@color/black"
+                                    android:gravity="center"
+                                    android:text="30 min"
+                                    android:textColor="@color/yellow" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/line_2"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:background="@color/black"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="0.5dp"
+                            android:layout_toRightOf="@+id/line_1">
+                            <RelativeLayout
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp">
+
+                                <TextView
+                                    android:id="@+id/tab_humidityTitle3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="40dp"
+                                    android:background="@color/black"
+                                    android:gravity="center"
+                                    android:text="Humidity"
+                                    android:textColor="@color/white" />
+
+                                <ImageView
+                                    android:id="@+id/tab_humidityIcon3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="70dp"
+                                    android:src="@drawable/cloudy"
+                                    android:layout_below="@+id/tab_humidityTitle3"/>
+
+                                <TextView
+                                    android:id="@+id/tab_humidityValue3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="40dp"
+                                    android:background="@color/black"
+                                    android:gravity="center"
+                                    android:text="1500 mps"
+                                    android:textColor="@color/yellow"
+                                    android:layout_below="@+id/tab_humidityIcon3"/>
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/line_3"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:background="@color/black"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="0.5dp"
+                            android:layout_toRightOf="@+id/line_2">
+                            <RelativeLayout
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp">
+
+                                <TextView
+                                    android:id="@+id/tab_pressureTitle3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="40dp"
+                                    android:background="@color/black"
+                                    android:gravity="center"
+                                    android:text="Pressure"
+                                    android:textColor="@color/white" />
+
+                                <ImageView
+                                    android:id="@+id/tab_pressureIcon3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="70dp"
+                                    android:src="@drawable/cloudy"
+                                    android:layout_below="@+id/tab_pressureTitle3"/>
+
+                                <TextView
+                                    android:id="@+id/tab_pressureValue3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="40dp"
+                                    android:background="@color/black"
+                                    android:gravity="center"
+                                    android:text="something"
+                                    android:textColor="@color/yellow"
+                                    android:layout_below="@+id/tab_pressureIcon3"/>
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/line_4"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:background="@color/black"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="0.5dp"
+                            android:layout_toRightOf="@+id/line_3">
+                            <RelativeLayout
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp">
+
+                                <TextView
+                                    android:id="@+id/tab_visibilityTitle3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="40dp"
+                                    android:background="@color/black"
+                                    android:gravity="center"
+                                    android:text="Visibility"
+                                    android:textColor="@color/white" />
+
+                                <ImageView
+                                    android:id="@+id/tab_visibilityIcon3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="70dp"
+                                    android:src="@drawable/cloudy"
+                                    android:layout_below="@+id/tab_visibilityTitle3"/>
+
+                                <TextView
+                                    android:id="@+id/tab_visibilityValue3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="40dp"
+                                    android:background="@color/black"
+                                    android:gravity="center"
+                                    android:text="Extremely Good"
+                                    android:textColor="@color/yellow"
+                                    android:layout_below="@+id/tab_visibilityIcon3"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0.5dp">
+
+                    <RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_1"
+                            android:layout_width="200dp"
+                            android:layout_height="180dp"
+                            android:background="@color/black"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp">
+
+                                <TextView
+                                    android:id="@+id/tab_windTitle3"
+                                    android:layout_width="200dp"
+                                    android:layout_height="40dp"
+                                    android:background="@color/black"
+                                    android:gravity="center"
+                                    android:text="Wind"
+                                    android:textColor="@color/white" />
+
+                                <ImageView
+                                    android:id="@+id/tab_windIcon3"
+                                    android:layout_width="200dp"
+                                    android:layout_height="70dp"
+                                    android:src="@drawable/cloudy"
+                                    android:layout_below="@+id/tab_windTitle3"/>
+
+                                <TextView
+                                    android:id="@+id/tab_windValue3"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/tab_windIcon3"
+                                    android:background="@color/black"
+                                    android:paddingTop="10dp"
+                                    android:gravity="center"
+                                    android:text="3000"
+                                    android:textColor="@color/yellow" />
+
+                                <TextView
+                                    android:id="@+id/tab_windDir3"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/tab_windValue3"
+                                    android:background="@color/black"
+                                    android:paddingTop="10dp"
+                                    android:gravity="center"
+                                    android:text="30 min"
+                                    android:textColor="@color/white" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_2"
+                            android:layout_width="200dp"
+                            android:layout_height="180dp"
+                            android:background="@color/black"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="0.5dp"
+                            android:layout_toRightOf="@+id/lay_1">
+                            <RelativeLayout
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp">
+
+                                <TextView
+                                    android:id="@+id/tab_sunTitle3"
+                                    android:layout_width="200dp"
+                                    android:layout_height="40dp"
+                                    android:background="@color/black"
+                                    android:gravity="center"
+                                    android:text="Sun"
+                                    android:textColor="@color/white" />
+
+                                <ImageView
+                                    android:id="@+id/tab_sunriseIcon3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="70dp"
+                                    android:paddingLeft="3dp"
+                                    android:src="@drawable/cloudy"
+                                    android:layout_below="@+id/tab_sunTitle3"/>
+
+                                <ImageView
+                                    android:id="@+id/tab_sunsetIcon3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="70dp"
+                                    android:src="@drawable/cloudy"
+                                    android:layout_below="@+id/tab_sunTitle3"
+                                    android:paddingRight="3dp"
+                                    android:layout_toRightOf="@id/tab_sunriseIcon3"/>
+
+                                <TextView
+                                    android:id="@+id/tab_sunriseValue3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:background="@color/black"
+                                    android:gravity="center"
+                                    android:text="something"
+                                    android:textColor="@color/yellow"
+                                    android:layout_below="@+id/tab_sunriseIcon3"/>
+
+                                <TextView
+                                    android:id="@+id/tab_sunsetValue3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:background="@color/black"
+                                    android:gravity="center"
+                                    android:text="Nothing"
+                                    android:textColor="@color/yellow"
+                                    android:layout_toRightOf="@+id/tab_sunriseValue3"
+                                    android:layout_below="@+id/tab_sunsetIcon3"/>
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </TableRow>
+
+            </TableLayout>
 
             <TextView
-                android:layout_width="350dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
-                android:gravity="center_horizontal"
-                android:textColor="@color/white"
-                android:id="@+id/tab_date3"
-                android:background="#974631"/>
-
-            <RelativeLayout
-                android:id="@+id/rv_1"
-                android:layout_width="350dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:layout_below="@+id/tab_date3"
-                android:background="#345465">
-
-                <ImageView
-                    android:layout_width="175dp"
-                    android:layout_height="200dp"
-                    android:id="@+id/tab_weatherIcon3"
-                    android:background="#655235"/>
-
-                <TextView
-                    android:layout_width="175dp"
-                    android:layout_height="100dp"
-                    android:id="@+id/tab_maxTemp3"
-                    android:textSize="20dp"
-                    android:textColor="@color/white"
-                    android:layout_toRightOf="@+id/tab_weatherIcon3"
-                    android:background="#214678"/>
-
-                <TextView
-                    android:layout_width="175dp"
-                    android:layout_height="100dp"
-                    android:id="@+id/tab_rainProb3"
-                    android:textSize="20dp"
-                    android:textColor="@color/white"
-                    android:layout_toRightOf="@+id/tab_weatherIcon3"
-                    android:layout_below="@+id/tab_maxTemp3"
-                    android:background="#023456"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rv_2"
-                android:layout_width="350dp"
-                android:layout_height="300dp"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center"
-                android:background="#670049"
-                android:paddingBottom="20dp"
-                android:layout_below="@+id/rv_1"
-                android:paddingTop="20dp">
-
-                <TableLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:paddingLeft="20dp">
-
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginBottom="10dp">
-
-                        <TextView
-                            android:layout_column="1"
-                            android:layout_width="145dp"
-                            android:layout_height="55dp"
-                            android:gravity="center_vertical"
-                            android:id="@+id/tab_maxTempTitle3"
-                            android:text="Max. Temp"
-                            android:textSize="25dp"
-                            android:textColor="@color/white"
-                            android:fontFamily="@font/josefin_sans"/>
-
-                        <TextView
-                            android:layout_column="1"
-                            android:layout_width="140dp"
-                            android:layout_height="55dp"
-                            android:gravity="center_vertical"
-                            android:id="@+id/tab_maxTempValue3"
-                            android:text="35"
-                            android:textAlignment="center"
-                            android:textSize="25dp"
-                            android:textColor="@color/white"
-                            android:fontFamily="@font/josefin_sans"/>
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginBottom="10dp">
-
-                        <TextView
-                            android:layout_column="1"
-                            android:layout_width="145dp"
-                            android:layout_height="55dp"
-                            android:gravity="center_vertical"
-                            android:id="@+id/tab_minTempTitle3"
-                            android:text="Min. Temp"
-                            android:textSize="25dp"
-                            android:textColor="@color/white"
-                            android:fontFamily="@font/josefin_sans"/>
-
-                        <TextView
-                            android:layout_column="1"
-                            android:layout_width="145dp"
-                            android:layout_height="55dp"
-                            android:gravity="center_vertical"
-                            android:id="@+id/tab_minTempValue3"
-                            android:text="25"
-                            android:textAlignment="center"
-                            android:textSize="25dp"
-                            android:textColor="@color/white"
-                            android:fontFamily="@font/josefin_sans"/>
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="55dp"
-                        android:layout_marginBottom="10dp">
-
-                        <TextView
-                            android:id="@+id/tab_pressureTitle3"
-                            android:layout_width="145dp"
-                            android:layout_height="55dp"
-                            android:gravity="center_vertical"
-                            android:layout_column="1"
-                            android:fontFamily="@font/josefin_sans"
-                            android:text="Pressure"
-                            android:textColor="@color/white"
-                            android:textSize="25dp" />
-
-                        <TextView
-                            android:layout_column="1"
-                            android:layout_width="145dp"
-                            android:layout_height="55dp"
-                            android:gravity="center_vertical"
-                            android:id="@+id/tab_pressureValue3"
-                            android:text="2905mps"
-                            android:textAlignment="center"
-                            android:textSize="25dp"
-                            android:textColor="@color/white"
-                            android:fontFamily="@font/josefin_sans"/>
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="55dp"
-                        android:layout_marginBottom="10dp">
-
-                        <TextView
-                            android:id="@+id/tab_humidityTitle3"
-                            android:layout_width="145dp"
-                            android:layout_height="55dp"
-                            android:gravity="center_vertical"
-                            android:layout_column="1"
-                            android:fontFamily="@font/josefin_sans"
-                            android:text="Humidity"
-                            android:textColor="@color/white"
-                            android:textSize="25dp" />
-
-                        <TextView
-                            android:layout_column="1"
-                            android:layout_width="145dp"
-                            android:layout_height="50dp"
-                            android:gravity="center_vertical"
-                            android:id="@+id/tab_humidityValue3"
-                            android:text="90%"
-                            android:textAlignment="center"
-                            android:textSize="25dp"
-                            android:textColor="@color/white"
-                            android:fontFamily="@font/josefin_sans"/>
-                    </TableRow>
-
-                </TableLayout>
-
-            </RelativeLayout>
-
-            <TextView
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#999"
-                android:layout_marginTop="10dp"
-                android:text="Fatuma Ingabire | S1719023"
+                android:text="Fatuma Ingabire | S1719023 | Aug 2019 "
                 android:textColor="@color/white"
-                android:layout_below="@+id/rv_2"
-                android:gravity="center_horizontal"
-                android:fontFamily="@font/josefin_sans" />
+                android:background="#666"
+                android:fontFamily="@font/josefin_sans"
+                android:layout_below="@+id/table"
+                android:gravity="center"
+                android:textSize="15dp"/>
         </RelativeLayout>
     </ScrollView>
 

@@ -1,4 +1,4 @@
-package com.example.dailycast;
+package com.example.dailycast.Views;
 
 /**
  *  Name: Fatuma Ingabire
@@ -8,7 +8,6 @@ package com.example.dailycast;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -17,11 +16,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.example.dailycast.DataObject.Weather;
-import com.example.dailycast.Fragments.FragmentDay1;
-import com.example.dailycast.Fragments.FragmentDay2;
-import com.example.dailycast.Fragments.FragmentDay3;
-import com.example.dailycast.UI.ViewPagerAdapter;
+import com.example.dailycast.Model.Weather;
+import com.example.dailycast.R;
+import com.example.dailycast.Controller.ViewPagerAdapter;
 
 
 public class LocationActivity extends AppCompatActivity {

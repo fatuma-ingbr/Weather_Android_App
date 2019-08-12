@@ -1,4 +1,4 @@
-package com.example.dailycast.UI;
+package com.example.dailycast.Controller;
 /**
  *  Name: Fatuma Ingabire
  *  Student ID: S1719023
