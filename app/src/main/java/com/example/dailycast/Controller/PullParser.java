@@ -28,6 +28,7 @@ public class PullParser extends AsyncTask<Integer, Void, HashMap<String, ArrayLi
 
     private URL url;
     WeatherAdapter adapter;
+    LinearLayoutManager linearLayoutManager;
 
     RecyclerView recyclerView;
 
@@ -125,7 +126,7 @@ public class PullParser extends AsyncTask<Integer, Void, HashMap<String, ArrayLi
     protected void onPostExecute(HashMap<String, ArrayList<Weather>> hashMap) {
         super.onPostExecute(hashMap);
 
-        HashMap<String, ArrayList<Weather>> toSend = new HashMap<>();
+        final HashMap<String, ArrayList<Weather>> toSend = new HashMap<>();
         String city;
 
         for(String key : hashMap.keySet()){
@@ -141,10 +142,21 @@ public class PullParser extends AsyncTask<Integer, Void, HashMap<String, ArrayLi
             toSend.put(city,arrayList);
         }
 
+        linearLayoutManager = new LinearLayoutManager(c);
         adapter = new WeatherAdapter(c,toSend);
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(c));
+        recyclerView.setLayoutManager(linearLayoutManager);
 
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                int firstItemVisible = linearLayoutManager.findFirstVisibleItemPosition();
+                if (firstItemVisible != 0 && firstItemVisible % toSend.size() == 0) {
+                    recyclerView.getLayoutManager().scrollToPosition(0);
+                }
+            }
+        });
     }
 
     private String getCity(String  code){

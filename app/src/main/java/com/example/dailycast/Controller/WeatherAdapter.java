@@ -55,7 +55,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
 
         //Looping through the keys to get the values
         //Assigning the values to an ArrayList
-        String key = locations.get(position);
+        String key = locations.get(position%weatherStorage.size());
         final ArrayList<Weather> weatherList = weatherStorage.get(key);
 
         //getting weather data from the ArrayList values
@@ -91,7 +91,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
 
     @Override
     public int getItemCount() {
-        return weatherStorage.size();
+        return weatherStorage == null ? 0 : weatherStorage.size() * 2;
     }
 
     class WeatherViewHolder extends RecyclerView.ViewHolder{
