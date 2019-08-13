@@ -58,22 +58,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //DONE:
-    //TODO: implement an appBarLayout move the city data there.
-    //TODO: Implement a menu with view all locations and set update time
-    //TODO: Revise the date so that the date change as you switch tabs
-    //TODO: Implement an update intervals - defaults 8am & 8pm (20:00hrs)
-    //TODO: Implement user navigation through the views
-    //TODO: Finish up styling the fragments views
-    //TODO: Restructure the folders to MVC
-
-    //ALMOST DONE
-
-
-    //YET TO-DONE
-    //TODO: implement the horizontal orientation
-    //TODO: Write test report
-    //TODO: Record with screen-o-matic
 
 
 }

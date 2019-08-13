@@ -19,7 +19,7 @@
             android:background="@drawable/gradient_yellow2">
 
             <ImageView
-                android:id="@+id/tab_weatherIcon1"
+                android:id="@+id/tab_weatherIcon2"
                 android:layout_width="230dp"
                 android:src="@drawable/partlycloudynight"
                 android:padding="20dp"
@@ -32,14 +32,14 @@
                 android:layout_height="350dp"
                 android:orientation="horizontal"
                 android:layout_marginLeft="0.5dp"
-                android:layout_toRightOf="@+id/tab_weatherIcon1"
+                android:layout_toRightOf="@+id/tab_weatherIcon2"
                 android:gravity="center">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                     <TextView
-                        android:id="@+id/tab_date1"
+                        android:id="@+id/tab_date2"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:textSize="20dp"
@@ -49,7 +49,7 @@
                         android:background="@color/black"/>
 
                     <TextView
-                        android:id="@+id/tab_rainProb1"
+                        android:id="@+id/tab_rainProb2"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:text="The weather is nice"
@@ -58,13 +58,13 @@
                         android:fontFamily="@font/josefin_sans"
                         android:gravity="center"
                         android:background="@color/black"
-                        android:layout_below="@+id/tab_date1"/>
+                        android:layout_below="@+id/tab_date2"/>
 
                     <TableLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/josefin_sans"
-                        android:layout_below="@+id/tab_rainProb1">
+                        android:layout_below="@+id/tab_rainProb2">
                         <TableRow
                             android:layout_marginTop="0.5dp"
                             android:layout_height="100dp">
@@ -84,14 +84,14 @@
                                         android:paddingRight="10dp">
 
                                         <ImageView
-                                            android:id="@+id/tab_tempIcon1"
+                                            android:id="@+id/tab_tempIcon2"
                                             android:layout_width="100dp"
                                             android:layout_height="80dp"
                                             android:paddingTop="15dp"
                                             android:src="@drawable/sunny"/>
 
                                         <TextView
-                                            android:id="@+id/tab_maxTemp1"
+                                            android:id="@+id/tab_maxTemp2"
                                             android:layout_width="100dp"
                                             android:layout_height="80dp"
                                             android:background="@color/black"
@@ -100,7 +100,7 @@
                                             android:paddingTop="20dp"
                                             android:textColor="@color/white"
                                             android:textSize="30dp"
-                                            android:layout_toRightOf="@+id/tab_tempIcon1"/>
+                                            android:layout_toRightOf="@+id/tab_tempIcon2"/>
 
                                     </RelativeLayout>
 
@@ -121,18 +121,18 @@
                                         android:paddingLeft="10dp"
                                         android:paddingRight="10dp">
                                         <ImageView
-                                            android:id="@+id/tab_windIcon1"
+                                            android:id="@+id/tab_windIcon2"
                                             android:layout_width="100dp"
                                             android:layout_height="70dp"
                                             android:paddingTop="5dp"
                                             android:src="@drawable/cloudy"/>
 
                                         <TextView
-                                            android:id="@+id/tab_windValue1"
+                                            android:id="@+id/tab_windValue2"
                                             android:layout_width="100dp"
                                             android:layout_marginTop="30dp"
                                             android:layout_height="wrap_content"
-                                            android:layout_toRightOf="@+id/tab_windIcon1"
+                                            android:layout_toRightOf="@+id/tab_windIcon2"
                                             android:background="@color/black"
                                             android:gravity="center_vertical"
                                             android:textSize="20dp"
@@ -140,13 +140,13 @@
                                             android:textColor="@color/yellow" />
 
                                         <TextView
-                                            android:id="@+id/tab_windDir1"
+                                            android:id="@+id/tab_windDir2"
                                             android:layout_width="200dp"
                                             android:layout_height="30dp"
                                             android:gravity="center"
                                             android:background="@color/black"
                                             android:text="Northerly Easterly"
-                                            android:layout_below="@+id/tab_windIcon1" android:textColor="@color/white" />
+                                            android:layout_below="@+id/tab_windIcon2" android:textColor="@color/white" />
                                     </RelativeLayout>
 
                                 </LinearLayout>
@@ -175,7 +175,7 @@
                                         android:paddingRight="10dp">
 
                                         <TextView
-                                            android:id="@+id/tab_minTempTitle1"
+                                            android:id="@+id/tab_minTempTitle2"
                                             android:layout_width="100dp"
                                             android:layout_height="40dp"
                                             android:background="@color/black"
@@ -185,18 +185,18 @@
                                             android:textColor="@color/white" />
 
                                         <ImageView
-                                            android:id="@+id/tab_minTempIcon1"
+                                            android:id="@+id/tab_minTempIcon2"
                                             android:layout_width="100dp"
                                             android:layout_height="70dp"
                                             android:src="@drawable/cloudy"
                                             android:layout_marginRight="0.5dp"
-                                            android:layout_below="@+id/tab_minTempTitle1"/>
+                                            android:layout_below="@+id/tab_minTempTitle2"/>
 
                                         <TextView
-                                            android:id="@+id/tab_minTempValue1"
+                                            android:id="@+id/tab_minTempValue2"
                                             android:layout_width="100dp"
                                             android:layout_height="40dp"
-                                            android:layout_below="@+id/tab_minTempIcon1"
+                                            android:layout_below="@+id/tab_minTempIcon2"
                                             android:layout_marginRight="0.5dp"
                                             android:background="@color/black"
                                             android:gravity="center"
@@ -222,7 +222,7 @@
                                         android:paddingRight="10dp">
 
                                         <TextView
-                                            android:id="@+id/tab_humidityTitle1"
+                                            android:id="@+id/tab_humidityTitle2"
                                             android:layout_width="100dp"
                                             android:layout_height="40dp"
                                             android:background="@color/black"
@@ -231,21 +231,21 @@
                                             android:textColor="@color/white" />
 
                                         <ImageView
-                                            android:id="@+id/tab_humidityIcon1"
+                                            android:id="@+id/tab_humidityIcon2"
                                             android:layout_width="100dp"
                                             android:layout_height="70dp"
                                             android:src="@drawable/cloudy"
-                                            android:layout_below="@+id/tab_humidityTitle1"/>
+                                            android:layout_below="@+id/tab_humidityTitle2"/>
 
                                         <TextView
-                                            android:id="@+id/tab_humidityValue1"
+                                            android:id="@+id/tab_humidityValue2"
                                             android:layout_width="100dp"
                                             android:layout_height="40dp"
                                             android:background="@color/black"
                                             android:gravity="center"
                                             android:text="1500 mps"
                                             android:textColor="@color/yellow"
-                                            android:layout_below="@+id/tab_humidityIcon1"/>
+                                            android:layout_below="@+id/tab_humidityIcon2"/>
 
                                     </RelativeLayout>
 
@@ -266,7 +266,7 @@
                                         android:paddingRight="10dp">
 
                                         <TextView
-                                            android:id="@+id/tab_pressureTitle1"
+                                            android:id="@+id/tab_pressureTitle2"
                                             android:layout_width="100dp"
                                             android:layout_height="40dp"
                                             android:background="@color/black"
@@ -275,21 +275,21 @@
                                             android:textColor="@color/white" />
 
                                         <ImageView
-                                            android:id="@+id/tab_pressureIcon1"
+                                            android:id="@+id/tab_pressureIcon2"
                                             android:layout_width="100dp"
                                             android:layout_height="70dp"
                                             android:src="@drawable/cloudy"
-                                            android:layout_below="@+id/tab_pressureTitle1"/>
+                                            android:layout_below="@+id/tab_pressureTitle2"/>
 
                                         <TextView
-                                            android:id="@+id/tab_pressureValue1"
+                                            android:id="@+id/tab_pressureValue2"
                                             android:layout_width="100dp"
                                             android:layout_height="40dp"
                                             android:background="@color/black"
                                             android:gravity="center"
                                             android:text="something"
                                             android:textColor="@color/yellow"
-                                            android:layout_below="@+id/tab_pressureIcon1"/>
+                                            android:layout_below="@+id/tab_pressureIcon2"/>
 
                                     </RelativeLayout>
 
@@ -310,7 +310,7 @@
                                         android:paddingRight="10dp">
 
                                         <TextView
-                                            android:id="@+id/tab_visibilityTitle1"
+                                            android:id="@+id/tab_visibilityTitle2"
                                             android:layout_width="100dp"
                                             android:layout_height="40dp"
                                             android:background="@color/black"
@@ -319,21 +319,21 @@
                                             android:textColor="@color/white" />
 
                                         <ImageView
-                                            android:id="@+id/tab_visibilityIcon1"
+                                            android:id="@+id/tab_visibilityIcon2"
                                             android:layout_width="100dp"
                                             android:layout_height="70dp"
                                             android:src="@drawable/cloudy"
-                                            android:layout_below="@+id/tab_visibilityTitle1"/>
+                                            android:layout_below="@+id/tab_visibilityTitle2"/>
 
                                         <TextView
-                                            android:id="@+id/tab_visibilityValue1"
+                                            android:id="@+id/tab_visibilityValue2"
                                             android:layout_width="100dp"
                                             android:layout_height="40dp"
                                             android:background="@color/black"
                                             android:gravity="center"
                                             android:text="Extremely Good"
                                             android:textColor="@color/yellow"
-                                            android:layout_below="@+id/tab_visibilityIcon1"/>
+                                            android:layout_below="@+id/tab_visibilityIcon2"/>
                                     </RelativeLayout>
                                 </LinearLayout>
                             </RelativeLayout>
@@ -352,7 +352,7 @@
                 android:orientation="vertical"
                 android:layout_marginRight="0.5dp"
                 android:layout_marginTop="0.5dp"
-                android:layout_below="@+id/tab_weatherIcon1">
+                android:layout_below="@+id/tab_weatherIcon2">
                 <RelativeLayout
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
@@ -360,7 +360,7 @@
                     android:paddingRight="10dp">
 
                     <TextView
-                        android:id="@+id/tab_sunTitle1"
+                        android:id="@+id/tab_sunTitle2"
                         android:layout_width="200dp"
                         android:layout_height="40dp"
                         android:background="@color/black"
@@ -369,42 +369,42 @@
                         android:textColor="@color/white" />
 
                     <ImageView
-                        android:id="@+id/tab_sunriseIcon1"
+                        android:id="@+id/tab_sunriseIcon2"
                         android:layout_width="100dp"
                         android:layout_height="70dp"
                         android:paddingLeft="3dp"
                         android:src="@drawable/cloudy"
-                        android:layout_below="@+id/tab_sunTitle1"/>
+                        android:layout_below="@+id/tab_sunTitle2"/>
 
                     <ImageView
-                        android:id="@+id/tab_sunsetIcon1"
+                        android:id="@+id/tab_sunsetIcon2"
                         android:layout_width="100dp"
                         android:layout_height="70dp"
                         android:src="@drawable/cloudy"
-                        android:layout_below="@+id/tab_sunTitle1"
+                        android:layout_below="@+id/tab_sunTitle2"
                         android:paddingRight="3dp"
-                        android:layout_toRightOf="@id/tab_sunriseIcon1"/>
+                        android:layout_toRightOf="@id/tab_sunriseIcon2"/>
 
                     <TextView
-                        android:id="@+id/tab_sunriseValue1"
+                        android:id="@+id/tab_sunriseValue2"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:background="@color/black"
                         android:gravity="center"
                         android:text="something"
                         android:textColor="@color/yellow"
-                        android:layout_below="@+id/tab_sunriseIcon1"/>
+                        android:layout_below="@+id/tab_sunriseIcon2"/>
 
                     <TextView
-                        android:id="@+id/tab_sunsetValue1"
+                        android:id="@+id/tab_sunsetValue2"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:background="@color/black"
                         android:gravity="center"
                         android:text="Nothing"
                         android:textColor="@color/yellow"
-                        android:layout_toRightOf="@+id/tab_sunriseValue1"
-                        android:layout_below="@+id/tab_sunsetIcon1"/>
+                        android:layout_toRightOf="@+id/tab_sunriseValue2"
+                        android:layout_below="@+id/tab_sunsetIcon2"/>
 
                 </RelativeLayout>
 
