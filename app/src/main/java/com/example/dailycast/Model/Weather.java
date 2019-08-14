@@ -1,14 +1,16 @@
-package com.example.dailycast.DataObject;
-
-import android.os.Parcel;
-import android.os.Parcelable;
-
+package com.example.dailycast.Model;
 /**
  *  Name: Fatuma Ingabire
  *  Student ID: S1719023
  * */
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 public class Weather implements Parcelable {
+    private String date;
+    private String title;
+    private String desc;
 
     private String city;
     private String country;
@@ -18,9 +20,7 @@ public class Weather implements Parcelable {
     private String minTemp;
     private String pressure;
     private String humidity;
-    private String date;
-    private String title;
-    private String desc;
+
     private String windDirection;
     private String windSpeed;
     private String visibility;
@@ -110,11 +110,13 @@ public class Weather implements Parcelable {
 
         this.city = city;
         country = getCountry(city);
-        day =splitTitle[0].split(":")[0];
+        day = splitTitle[0].split(":")[0];
         rainProbability =splitTitle[0].split(":")[1];
 
         if(splitDesc.length == 9){
-            minTemp = splitDesc[0].split(":")[1];
+            maxTemp = splitDesc[0].split(":")[1].substring(0,5);
+            minTemp = "-";
+            sunrise = "-";
             windDirection = splitDesc[1].split(":")[1];
             windSpeed = splitDesc[2].split(":")[1];
             visibility = splitDesc[3].split(":")[1];
@@ -125,8 +127,8 @@ public class Weather implements Parcelable {
             sunset = splitDesc[8].split(":")[1];
 
         }else if(splitDesc.length == 11){
-            maxTemp = splitDesc[0].split(":")[1];
-            minTemp = splitDesc[1].split(":")[1];
+            maxTemp = splitDesc[0].split(":")[1].substring(0,5);
+            minTemp = splitDesc[1].split(":")[1].substring(0,5);
             windDirection = splitDesc[2].split(":")[1];
             windSpeed = splitDesc[3].split(":")[1];
             visibility = splitDesc[4].split(":")[1];

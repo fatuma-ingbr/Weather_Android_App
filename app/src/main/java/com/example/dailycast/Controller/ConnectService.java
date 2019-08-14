@@ -1,4 +1,4 @@
-package com.example.dailycast.RSS;
+package com.example.dailycast.Controller;
 
 /**
  *  Name: Fatuma Ingabire

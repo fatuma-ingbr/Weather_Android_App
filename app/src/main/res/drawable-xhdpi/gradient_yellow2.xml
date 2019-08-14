@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Name: Fatuma Ingabire-->
+<!--Student ID: S1719023-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:type="radial"
+        android:gradientRadius="260dp"
+        android:startColor="#ffcb00"
+        android:centerColor="#ffcb00"
+        android:endColor="@color/black" />
+</shape>

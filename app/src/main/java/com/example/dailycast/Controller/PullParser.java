@@ -1,4 +1,8 @@
-package com.example.dailycast.RSS;
+package com.example.dailycast.Controller;
+/**
+ *  Name: Fatuma Ingabire
+ *  Student ID: S1719023
+ * */
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -6,15 +10,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.example.dailycast.DataObject.Weather;
-import com.example.dailycast.UI.WeatherAdapter;
+import com.example.dailycast.Model.Weather;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,26 +25,25 @@ public class PullParser extends AsyncTask<Integer, Void, HashMap<String, ArrayLi
 
     private Context c;
     private final String baseUrl = "https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/";
+
     private URL url;
     WeatherAdapter adapter;
+    LinearLayoutManager linearLayoutManager;
 
     RecyclerView recyclerView;
 
     HashMap<String, ArrayList<Weather>> allLocationsData = new HashMap<>();
 
     //constructor that takes context, and location code
-    public PullParser(Context c, View view) throws MalformedURLException {
+    public PullParser(Context c, View view) {
         this.c = c;
         this.recyclerView = (RecyclerView) view;
 
     }
 
 
-
     @Override
     protected HashMap<String, ArrayList<Weather>> doInBackground(Integer... integers) {
-
-        ArrayList<Weather> singleLocationWeatherObjects = new ArrayList<>();
 
         ArrayList<String> locationCodes = new ArrayList<>();
 
@@ -55,6 +56,8 @@ public class PullParser extends AsyncTask<Integer, Void, HashMap<String, ArrayLi
         locationCodes.add("2643743");//United Kingdom
 
         for(int i = 0; i < locationCodes.size(); i++){
+
+            ArrayList<Weather> singleLocationWeatherObjects = new ArrayList<>();
 
             String code = locationCodes.get(i);
 
@@ -113,39 +116,47 @@ public class PullParser extends AsyncTask<Integer, Void, HashMap<String, ArrayLi
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
             allLocationsData.put(getCity(code),singleLocationWeatherObjects);
         }
-        System.out.println("I AM SUPPOSED TO WORKING!!!!!");
-        System.out.println("IS IT SEVEN?  " + allLocationsData.size());
+
         return allLocationsData;
     }
-
-    //TODO: for recyclerview, implement the same as onPostExecute as before
-
 
     @Override
     protected void onPostExecute(HashMap<String, ArrayList<Weather>> hashMap) {
         super.onPostExecute(hashMap);
 
-        HashMap<String, ArrayList<Weather>> weatherStore = hashMap;
+        final HashMap<String, ArrayList<Weather>> toSend = new HashMap<>();
+        String city;
 
-        for(String key : weatherStore.keySet()){
-            String city = key;
-            ArrayList<Weather> arrayList = hashMap.get(key);
-            System.out.println("SINGLE CITY SIZE (supposed to be 3): " + key  + arrayList.size());
+        for(String key : hashMap.keySet()){
+            city = key;
+            ArrayList<Weather> arrayList = hashMap.get(city);
 
             for(int i = 0; i < arrayList.size(); i++){
+
                 Weather weather = arrayList.get(i);
                 weather.splitStrings(weather.getTitle(),weather.getDesc(),city);
             }
+
+            toSend.put(city,arrayList);
         }
 
-
-        adapter = new WeatherAdapter(c,weatherStore);
+        linearLayoutManager = new LinearLayoutManager(c);
+        adapter = new WeatherAdapter(c,toSend);
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(c));
+        recyclerView.setLayoutManager(linearLayoutManager);
 
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                int firstItemVisible = linearLayoutManager.findFirstVisibleItemPosition();
+                if (firstItemVisible != 0 && firstItemVisible % toSend.size() == 0) {
+                    recyclerView.getLayoutManager().scrollToPosition(0);
+                }
+            }
+        });
     }
 
     private String getCity(String  code){
@@ -164,9 +175,11 @@ public class PullParser extends AsyncTask<Integer, Void, HashMap<String, ArrayLi
             case "5128581":
                 return "New York";
             case "934154":
-                return "PortLouis";
+                return "Port Louis";
         }
 
         return null;
     }
+
+
 }
